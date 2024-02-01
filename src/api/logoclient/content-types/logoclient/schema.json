@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "logoclients",
+  "info": {
+    "singularName": "logoclient",
+    "pluralName": "logoclients",
+    "displayName": "logoclient"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "logoupload": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}
