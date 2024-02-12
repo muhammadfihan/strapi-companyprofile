@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bisnisbidangs",
+  "info": {
+    "singularName": "bisnisbidang",
+    "pluralName": "bisnisbidangs",
+    "displayName": "bisnisbidang"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "scopebisnis": {
+      "type": "string"
+    },
+    "penjelas": {
+      "type": "string"
+    },
+    "gambar": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

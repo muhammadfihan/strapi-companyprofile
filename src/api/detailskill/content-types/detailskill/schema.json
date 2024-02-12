@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "fiturs",
+  "collectionName": "detailskills",
   "info": {
-    "singularName": "fitur",
-    "pluralName": "fiturs",
-    "displayName": "Home.Fitur",
+    "singularName": "detailskill",
+    "pluralName": "detailskills",
+    "displayName": "Our Solution/Developer Service.Detail Skill",
     "description": ""
   },
   "options": {
@@ -12,10 +12,10 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "judulgambar": {
+    "namaskill": {
       "type": "string"
     },
-    "gambarfitur": {
+    "gambarskill": {
       "type": "media",
       "multiple": false,
       "required": false,
@@ -26,8 +26,11 @@
         "audios"
       ]
     },
-    "descgambar": {
-      "type": "text"
+    "skill": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::skill.skill",
+      "inversedBy": "detailskills"
     }
   }
 }

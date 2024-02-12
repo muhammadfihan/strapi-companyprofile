@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "skills",
+  "info": {
+    "singularName": "skill",
+    "pluralName": "skills",
+    "displayName": "Our Solution/Developer Service.Skill",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "bidangskill": {
+      "type": "string"
+    },
+    "detailskills": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::detailskill.detailskill",
+      "mappedBy": "skill"
+    }
+  }
+}

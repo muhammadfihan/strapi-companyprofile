@@ -4,7 +4,8 @@
   "info": {
     "singularName": "logoclient",
     "pluralName": "logoclients",
-    "displayName": "logoclient"
+    "displayName": "Home.Logo Client",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,14 +13,15 @@
   "pluginOptions": {},
   "attributes": {
     "logoupload": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     }
   }
 }

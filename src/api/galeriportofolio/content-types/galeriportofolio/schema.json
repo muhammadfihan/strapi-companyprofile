@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "galeriportofolios",
+  "info": {
+    "singularName": "galeriportofolio",
+    "pluralName": "galeriportofolios",
+    "displayName": "Our Work.Portofolio.Galeri Portofolio",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "gambar": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "portfolio": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::portfolio.portfolio",
+      "inversedBy": "galeriportofolios"
+    }
+  }
+}

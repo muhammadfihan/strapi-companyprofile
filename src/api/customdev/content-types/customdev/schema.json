@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "customdevs",
+  "info": {
+    "singularName": "customdev",
+    "pluralName": "customdevs",
+    "displayName": "Our Solution/Custom Development.Service",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "service": {
+      "type": "string"
+    },
+    "descservice": {
+      "type": "text"
+    },
+    "gambarservice": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "files",
+        "videos",
+        "audios",
+        "images"
+      ]
+    },
+    "fitur_services": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::fitur-service.fitur-service",
+      "mappedBy": "service"
+    }
+  }
+}
