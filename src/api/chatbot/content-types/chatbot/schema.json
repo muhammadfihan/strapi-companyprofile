@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "chatbots",
+  "info": {
+    "singularName": "chatbot",
+    "pluralName": "chatbots",
+    "displayName": "chatbot",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "pertanyaan": {
+      "type": "string"
+    },
+    "jawaban": {
+      "type": "text"
+    },
+    "katakunci": {
+      "type": "string"
+    }
+  }
+}

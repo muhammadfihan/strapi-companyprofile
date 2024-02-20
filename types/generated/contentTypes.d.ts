@@ -852,6 +852,39 @@ export interface ApiBisnisbidangBisnisbidang extends Schema.CollectionType {
   };
 }
 
+export interface ApiChatbotChatbot extends Schema.CollectionType {
+  collectionName: 'chatbots';
+  info: {
+    singularName: 'chatbot';
+    pluralName: 'chatbots';
+    displayName: 'chatbot';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    pertanyaan: Attribute.String;
+    jawaban: Attribute.Text;
+    katakunci: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::chatbot.chatbot',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::chatbot.chatbot',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCustomdevCustomdev extends Schema.CollectionType {
   collectionName: 'customdevs';
   info: {
@@ -1305,6 +1338,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::slugify.slug': PluginSlugifySlug;
       'api::bisnisbidang.bisnisbidang': ApiBisnisbidangBisnisbidang;
+      'api::chatbot.chatbot': ApiChatbotChatbot;
       'api::customdev.customdev': ApiCustomdevCustomdev;
       'api::detailskill.detailskill': ApiDetailskillDetailskill;
       'api::fitur.fitur': ApiFiturFitur;

@@ -7,7 +7,7 @@ const config = {
     // 'dk',
     // 'es',
     // 'he',
-    "id",
+    //   "id",
     // 'it',
     // 'ja',
     // 'ko',
@@ -27,15 +27,21 @@ const config = {
     // 'zh-Hans',
     // 'zh',
   ],
+  tutorials: false,
+  notifications: {
+    releases: false,
+  },
   theme: {
-    colors: {
-      primary100: "#c9ffeb",
-      primary200: "#5effc3",
-      primary500: "#00f298",
-      buttonPrimary500: "#00f298",
-      primary600: "#00bd77",
-      buttonPrimary600: "#00bd77",
-      primary700: "#008755",
+    light: {
+      colors: {
+        primary100: "#fcecea",
+        primary200: "#f5c0b8",
+        primary500: "#ee5e52",
+        buttonPrimary500: "#ee5e52",
+        primary600: "#CB292C",
+        buttonPrimary600: "#CB292C",
+        primary700: "#b72b1a",
+      },
     },
   },
 };
