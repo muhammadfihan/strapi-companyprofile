@@ -44,6 +44,17 @@ const config = {
       },
     },
   },
+  translations: {
+    en: {
+      "app.components.LeftMenu.navbrand.title": "Admin Dashboard",
+      "app.components.LeftMenu.navbrand.workplace": "Nakula Sadewa",
+      "Auth.form.email.placeholder": "",
+      "Auth.form.welcome.subtitle": "Login dengan akun admin",
+      "Auth.form.welcome.title": "Admin CMS",
+      "content-manager.components.LeftMenu.collection-types": "List Data",
+      "content-manager.components.LeftMenu.single-types": "Content Management",
+    },
+  },
 };
 
 const bootstrap = (app) => {

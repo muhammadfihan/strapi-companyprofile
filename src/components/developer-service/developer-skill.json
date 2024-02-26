@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_developer_service_devskill",
+  "info": {
+    "displayName": "Developer Skill",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "subjudul": {
+      "type": "string"
+    },
+    "judul_utama": {
+      "type": "string"
+    },
+    "deskripsi": {
+      "type": "text"
+    },
+    "list_skills": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::list-skill.list-skill"
+    }
+  }
+}

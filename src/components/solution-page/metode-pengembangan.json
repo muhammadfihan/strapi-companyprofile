@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_solution_page_metode_pengembangans",
+  "info": {
+    "displayName": "Metode Pengembangan"
+  },
+  "options": {},
+  "attributes": {
+    "metode_pengembangan": {
+      "type": "string"
+    },
+    "deskripsi": {
+      "type": "text"
+    },
+    "icon_metodepengembangan": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

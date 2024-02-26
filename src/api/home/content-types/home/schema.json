@@ -1,0 +1,51 @@
+{
+  "kind": "singleType",
+  "collectionName": "homes",
+  "info": {
+    "singularName": "home",
+    "pluralName": "homes",
+    "displayName": "Home",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "hero.hero"
+    },
+    "produk_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "hero.display-produk"
+    },
+    "keunggulan_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "hero.keunggulan-produk"
+    },
+    "bisnis_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "hero.bidang-bisnis"
+    },
+    "list_produks": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::list-produk.list-produk"
+    },
+    "list_logos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::list-logo.list-logo"
+    },
+    "list_bidangs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::list-bidang.list-bidang"
+    }
+  }
+}

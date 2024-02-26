@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_developer_service_main_sections",
+  "info": {
+    "displayName": "Main Section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "judul_path": {
+      "type": "string"
+    },
+    "subjudul": {
+      "type": "string"
+    },
+    "judul_utama": {
+      "type": "string"
+    },
+    "deskripsi": {
+      "type": "text"
+    },
+    "banner_text": {
+      "type": "string"
+    }
+  }
+}

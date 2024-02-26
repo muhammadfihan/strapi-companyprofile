@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_portofolio_page_portofolio_sections",
+  "info": {
+    "displayName": "Portofolio Section"
+  },
+  "options": {},
+  "attributes": {
+    "subjudul": {
+      "type": "string"
+    },
+    "judul_utama": {
+      "type": "string"
+    }
+  }
+}

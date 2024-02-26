@@ -1,0 +1,49 @@
+{
+  "collectionName": "components_principal_page_principal_mains",
+  "info": {
+    "displayName": "Principal-main"
+  },
+  "options": {},
+  "attributes": {
+    "judul_path": {
+      "type": "string"
+    },
+    "subjudul": {
+      "type": "string"
+    },
+    "judul_utama": {
+      "type": "string"
+    },
+    "caption": {
+      "type": "string"
+    },
+    "deskripsi": {
+      "type": "text"
+    },
+    "count1": {
+      "type": "string"
+    },
+    "deskripsi1": {
+      "type": "string"
+    },
+    "count2": {
+      "type": "string"
+    },
+    "deskripsi2": {
+      "type": "string"
+    },
+    "kalimat_principal": {
+      "type": "text"
+    },
+    "gambar": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

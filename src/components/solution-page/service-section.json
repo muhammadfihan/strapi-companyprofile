@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_solution_page_service_sections",
+  "info": {
+    "displayName": "Service Section"
+  },
+  "options": {},
+  "attributes": {
+    "judul_service": {
+      "type": "string"
+    },
+    "subjudul": {
+      "type": "string"
+    }
+  }
+}

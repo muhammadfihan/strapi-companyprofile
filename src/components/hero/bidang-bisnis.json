@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_hero_bidang_bisnis",
+  "info": {
+    "displayName": "Bidang Bisnis"
+  },
+  "options": {},
+  "attributes": {
+    "judul": {
+      "type": "string"
+    },
+    "subjudul": {
+      "type": "string"
+    }
+  }
+}

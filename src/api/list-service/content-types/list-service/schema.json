@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "list_services",
+  "info": {
+    "singularName": "list-service",
+    "pluralName": "list-services",
+    "displayName": "List Service",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "deskripsi_service": {
+      "type": "text"
+    },
+    "judul_service": {
+      "type": "string"
+    },
+    "icon_service": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "list_service_details": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::list-service-detail.list-service-detail",
+      "mappedBy": "list_service"
+    }
+  }
+}

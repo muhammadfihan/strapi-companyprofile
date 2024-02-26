@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_solution_page_count_components",
+  "info": {
+    "displayName": "Count Component",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "count1": {
+      "type": "string"
+    },
+    "deskripsi1": {
+      "type": "string"
+    },
+    "count2": {
+      "type": "string"
+    },
+    "deskripsi2": {
+      "type": "string"
+    },
+    "count3": {
+      "type": "string"
+    },
+    "deskripsi3": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "list_portofolios",
+  "info": {
+    "singularName": "list-portofolio",
+    "pluralName": "list-portofolios",
+    "displayName": "List Portofolio",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "gambar_utama": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "galeri_portofolio": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "nama_aplikasi": {
+      "type": "string"
+    },
+    "perusahaan": {
+      "type": "string"
+    },
+    "deskripsi": {
+      "type": "blocks"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "nama_aplikasi"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "list_commercial_fiturs",
+  "info": {
+    "singularName": "list-commercial-fitur",
+    "pluralName": "list-commercial-fiturs",
+    "displayName": "List Commercial Fitur"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "fitur": {
+      "type": "string"
+    },
+    "list_commercials": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::list-commercial.list-commercial",
+      "inversedBy": "list_commercial_fiturs"
+    }
+  }
+}

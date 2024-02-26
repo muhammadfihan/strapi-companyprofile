@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "prinsip_produks",
+  "info": {
+    "singularName": "prinsip-produk",
+    "pluralName": "prinsip-produks",
+    "displayName": "Prinsip Produk",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "main_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "principal-page.principal-main"
+    },
+    "principal_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "principal-page.principal-product"
+    },
+    "commercials_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "principal-page.commercials"
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "collectionName": "components_developer_service_devsection",
+  "info": {
+    "displayName": "Developer Section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "subjudul": {
+      "type": "string"
+    },
+    "judul_utama": {
+      "type": "string"
+    },
+    "deskripsi": {
+      "type": "text"
+    },
+    "icon_center": {
+      "allowedTypes": ["images"],
+      "type": "media",
+      "multiple": false
+    },
+    "judul1": {
+      "type": "string"
+    },
+    "deskripsi1": {
+      "type": "text"
+    },
+    "judul2": {
+      "type": "string"
+    },
+    "deskripsi2": {
+      "type": "text"
+    },
+    "judul3": {
+      "type": "string"
+    },
+    "deskripsi3": {
+      "type": "text"
+    },
+    "judul4": {
+      "type": "string"
+    },
+    "deskripsi4": {
+      "type": "text"
+    },
+    "banner_icon": {
+      "allowedTypes": ["images"],
+      "type": "media",
+      "multiple": false
+    },
+    "banner_text": {
+      "type": "string"
+    }
+  }
+}

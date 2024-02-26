@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "list_skills",
+  "info": {
+    "singularName": "list-skill",
+    "pluralName": "list-skills",
+    "displayName": "List Skill",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Skill": {
+      "type": "string"
+    },
+    "list_skill_details": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::list-skill-detail.list-skill-detail",
+      "mappedBy": "list_skills"
+    }
+  }
+}

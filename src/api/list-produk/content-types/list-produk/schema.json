@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "list_produks",
+  "info": {
+    "singularName": "list-produk",
+    "pluralName": "list-produks",
+    "displayName": "List Produk",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nama_produk": {
+      "type": "string"
+    },
+    "deskripsi": {
+      "type": "text"
+    },
+    "gambar_produk": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    }
+  }
+}

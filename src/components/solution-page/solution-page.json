@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_solution_page_solution_pages",
+  "info": {
+    "displayName": "Solution Page",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "judul_path": {
+      "type": "string"
+    },
+    "subjudul": {
+      "type": "string"
+    },
+    "judul_utama": {
+      "type": "string"
+    },
+    "deskripsi": {
+      "type": "text"
+    }
+  }
+}

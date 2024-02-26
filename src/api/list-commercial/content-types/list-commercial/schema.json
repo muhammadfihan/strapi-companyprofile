@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "list_commercials",
+  "info": {
+    "singularName": "list-commercial",
+    "pluralName": "list-commercials",
+    "displayName": "List Commercial",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "subjudul": {
+      "type": "string"
+    },
+    "judul": {
+      "type": "string"
+    },
+    "nama_produk": {
+      "type": "string"
+    },
+    "list_commercial_fiturs": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::list-commercial-fitur.list-commercial-fitur",
+      "mappedBy": "list_commercials"
+    }
+  }
+}

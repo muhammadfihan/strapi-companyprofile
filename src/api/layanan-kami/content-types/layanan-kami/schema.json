@@ -1,0 +1,41 @@
+{
+  "kind": "singleType",
+  "collectionName": "layanan_kamis",
+  "info": {
+    "singularName": "layanan-kami",
+    "pluralName": "layanan-kamis",
+    "displayName": "Layanan Kami",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "main_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "solution-page.solution-page"
+    },
+    "count_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "solution-page.count-component"
+    },
+    "service_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "solution-page.service-section"
+    },
+    "list_services": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::list-service.list-service"
+    },
+    "Metode_Pengembangan": {
+      "type": "component",
+      "repeatable": false,
+      "component": "solution-page.metode-pengembangan"
+    }
+  }
+}

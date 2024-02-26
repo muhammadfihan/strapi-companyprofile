@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "skill_developers",
+  "info": {
+    "singularName": "skill-developer",
+    "pluralName": "skill-developers",
+    "displayName": "Skill Developer",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "main_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "developer-service.main-section"
+    },
+    "developer_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "developer-service.developer-section"
+    },
+    "skill_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "developer-service.developer-skill"
+    }
+  }
+}

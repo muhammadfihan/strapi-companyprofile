@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_principal_products",
+  "info": {
+    "displayName": "Principal-product",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "subjudul": {
+      "type": "string"
+    },
+    "judul_utama": {
+      "type": "string"
+    },
+    "deskripsi": {
+      "type": "text"
+    },
+    "list_principals": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::list-principal.list-principal"
+    }
+  }
+}

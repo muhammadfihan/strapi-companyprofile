@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "list_fiturs",
+  "info": {
+    "singularName": "list-fitur",
+    "pluralName": "list-fiturs",
+    "displayName": "List Fitur"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "fitur": {
+      "type": "string"
+    }
+  }
+}

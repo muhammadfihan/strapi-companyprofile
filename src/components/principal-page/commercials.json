@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_commercials",
+  "info": {
+    "displayName": "Commercials",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "subjudul": {
+      "type": "string"
+    },
+    "judul_utama": {
+      "type": "string"
+    },
+    "list_commercials": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::list-commercial.list-commercial"
+    },
+    "hover_image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

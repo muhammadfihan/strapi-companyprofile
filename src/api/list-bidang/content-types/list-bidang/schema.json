@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "list_bidangs",
+  "info": {
+    "singularName": "list-bidang",
+    "pluralName": "list-bidangs",
+    "displayName": "List Bidang",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "bidang_bisnis": {
+      "type": "string"
+    },
+    "deskripsi": {
+      "type": "text"
+    },
+    "icon_bisnis": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_hero_keunggulan_produks",
+  "info": {
+    "displayName": "Keunggulan Produk",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "judul": {
+      "type": "string"
+    },
+    "deskiripsi": {
+      "type": "text"
+    },
+    "mockup_produk": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "list_fiturs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::list-fitur.list-fitur"
+    }
+  }
+}

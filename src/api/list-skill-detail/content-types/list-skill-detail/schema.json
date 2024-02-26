@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "list_skill_details",
+  "info": {
+    "singularName": "list-skill-detail",
+    "pluralName": "list-skill-details",
+    "displayName": "List Skill Detail"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "icon_skill": {
+      "allowedTypes": ["images"],
+      "type": "media",
+      "multiple": false
+    },
+    "skill": {
+      "type": "string"
+    },
+    "list_skills": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::list-skill.list-skill",
+      "inversedBy": "list_skill_details"
+    }
+  }
+}

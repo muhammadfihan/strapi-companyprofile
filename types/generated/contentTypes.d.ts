@@ -820,38 +820,6 @@ export interface PluginSlugifySlug extends Schema.CollectionType {
   };
 }
 
-export interface ApiBisnisbidangBisnisbidang extends Schema.CollectionType {
-  collectionName: 'bisnisbidangs';
-  info: {
-    singularName: 'bisnisbidang';
-    pluralName: 'bisnisbidangs';
-    displayName: 'bisnisbidang';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    scopebisnis: Attribute.String;
-    penjelas: Attribute.String;
-    gambar: Attribute.Media;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::bisnisbidang.bisnisbidang',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::bisnisbidang.bisnisbidang',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiChatbotChatbot extends Schema.CollectionType {
   collectionName: 'chatbots';
   info: {
@@ -885,74 +853,79 @@ export interface ApiChatbotChatbot extends Schema.CollectionType {
   };
 }
 
-export interface ApiCustomdevCustomdev extends Schema.CollectionType {
-  collectionName: 'customdevs';
+export interface ApiHomeHome extends Schema.SingleType {
+  collectionName: 'homes';
   info: {
-    singularName: 'customdev';
-    pluralName: 'customdevs';
-    displayName: 'Our Solution/Custom Development.Service';
+    singularName: 'home';
+    pluralName: 'homes';
+    displayName: 'Home';
     description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    service: Attribute.String;
-    descservice: Attribute.Text;
-    gambarservice: Attribute.Media;
-    fitur_services: Attribute.Relation<
-      'api::customdev.customdev',
+    hero_section: Attribute.Component<'hero.hero'>;
+    produk_section: Attribute.Component<'hero.display-produk'>;
+    keunggulan_section: Attribute.Component<'hero.keunggulan-produk'>;
+    bisnis_section: Attribute.Component<'hero.bidang-bisnis'>;
+    list_produks: Attribute.Relation<
+      'api::home.home',
       'oneToMany',
-      'api::fitur-service.fitur-service'
+      'api::list-produk.list-produk'
+    >;
+    list_logos: Attribute.Relation<
+      'api::home.home',
+      'oneToMany',
+      'api::list-logo.list-logo'
+    >;
+    list_bidangs: Attribute.Relation<
+      'api::home.home',
+      'oneToMany',
+      'api::list-bidang.list-bidang'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::customdev.customdev',
-      'oneToOne',
-      'admin::user'
-    > &
+    createdBy: Attribute.Relation<'api::home.home', 'oneToOne', 'admin::user'> &
       Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::customdev.customdev',
-      'oneToOne',
-      'admin::user'
-    > &
+    updatedBy: Attribute.Relation<'api::home.home', 'oneToOne', 'admin::user'> &
       Attribute.Private;
   };
 }
 
-export interface ApiDetailskillDetailskill extends Schema.CollectionType {
-  collectionName: 'detailskills';
+export interface ApiLayananKamiLayananKami extends Schema.SingleType {
+  collectionName: 'layanan_kamis';
   info: {
-    singularName: 'detailskill';
-    pluralName: 'detailskills';
-    displayName: 'Our Solution/Developer Service.Detail Skill';
+    singularName: 'layanan-kami';
+    pluralName: 'layanan-kamis';
+    displayName: 'Layanan Kami';
     description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    namaskill: Attribute.String;
-    gambarskill: Attribute.Media;
-    skill: Attribute.Relation<
-      'api::detailskill.detailskill',
-      'manyToOne',
-      'api::skill.skill'
+    main_section: Attribute.Component<'solution-page.solution-page'>;
+    count_section: Attribute.Component<'solution-page.count-component'>;
+    service_section: Attribute.Component<'solution-page.service-section'>;
+    list_services: Attribute.Relation<
+      'api::layanan-kami.layanan-kami',
+      'oneToMany',
+      'api::list-service.list-service'
     >;
+    Metode_Pengembangan: Attribute.Component<'solution-page.metode-pengembangan'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::detailskill.detailskill',
+      'api::layanan-kami.layanan-kami',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::detailskill.detailskill',
+      'api::layanan-kami.layanan-kami',
       'oneToOne',
       'admin::user'
     > &
@@ -960,32 +933,32 @@ export interface ApiDetailskillDetailskill extends Schema.CollectionType {
   };
 }
 
-export interface ApiFiturFitur extends Schema.CollectionType {
-  collectionName: 'fiturs';
+export interface ApiListBidangListBidang extends Schema.CollectionType {
+  collectionName: 'list_bidangs';
   info: {
-    singularName: 'fitur';
-    pluralName: 'fiturs';
-    displayName: 'Home.Fitur';
+    singularName: 'list-bidang';
+    pluralName: 'list-bidangs';
+    displayName: 'List Bidang';
     description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    judulgambar: Attribute.String;
-    gambarfitur: Attribute.Media;
-    descgambar: Attribute.Text;
+    bidang_bisnis: Attribute.String;
+    deskripsi: Attribute.Text;
+    icon_bisnis: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::fitur.fitur',
+      'api::list-bidang.list-bidang',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::fitur.fitur',
+      'api::list-bidang.list-bidang',
       'oneToOne',
       'admin::user'
     > &
@@ -993,36 +966,74 @@ export interface ApiFiturFitur extends Schema.CollectionType {
   };
 }
 
-export interface ApiFiturPortoFiturPorto extends Schema.CollectionType {
-  collectionName: 'fitur_portos';
+export interface ApiListCommercialListCommercial extends Schema.CollectionType {
+  collectionName: 'list_commercials';
   info: {
-    singularName: 'fitur-porto';
-    pluralName: 'fitur-portos';
-    displayName: 'Our Work.Portofolio.Fitur Portofolio';
+    singularName: 'list-commercial';
+    pluralName: 'list-commercials';
+    displayName: 'List Commercial';
     description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    icon: Attribute.Media;
+    subjudul: Attribute.String;
+    judul: Attribute.String;
+    nama_produk: Attribute.String;
+    list_commercial_fiturs: Attribute.Relation<
+      'api::list-commercial.list-commercial',
+      'manyToMany',
+      'api::list-commercial-fitur.list-commercial-fitur'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::list-commercial.list-commercial',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::list-commercial.list-commercial',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiListCommercialFiturListCommercialFitur
+  extends Schema.CollectionType {
+  collectionName: 'list_commercial_fiturs';
+  info: {
+    singularName: 'list-commercial-fitur';
+    pluralName: 'list-commercial-fiturs';
+    displayName: 'List Commercial Fitur';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     fitur: Attribute.String;
-    detailfitur: Attribute.String;
-    portfolio: Attribute.Relation<
-      'api::fitur-porto.fitur-porto',
-      'manyToOne',
-      'api::portfolio.portfolio'
+    list_commercials: Attribute.Relation<
+      'api::list-commercial-fitur.list-commercial-fitur',
+      'manyToMany',
+      'api::list-commercial.list-commercial'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::fitur-porto.fitur-porto',
+      'api::list-commercial-fitur.list-commercial-fitur',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::fitur-porto.fitur-porto',
+      'api::list-commercial-fitur.list-commercial-fitur',
       'oneToOne',
       'admin::user'
     > &
@@ -1030,35 +1041,29 @@ export interface ApiFiturPortoFiturPorto extends Schema.CollectionType {
   };
 }
 
-export interface ApiFiturServiceFiturService extends Schema.CollectionType {
-  collectionName: 'fitur_services';
+export interface ApiListFiturListFitur extends Schema.CollectionType {
+  collectionName: 'list_fiturs';
   info: {
-    singularName: 'fitur-service';
-    pluralName: 'fitur-services';
-    displayName: 'Our Solution/Custom Development.Fitur Service';
-    description: '';
+    singularName: 'list-fitur';
+    pluralName: 'list-fiturs';
+    displayName: 'List Fitur';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    namafitur: Attribute.String;
-    service: Attribute.Relation<
-      'api::fitur-service.fitur-service',
-      'manyToOne',
-      'api::customdev.customdev'
-    >;
+    fitur: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::fitur-service.fitur-service',
+      'api::list-fitur.list-fitur',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::fitur-service.fitur-service',
+      'api::list-fitur.list-fitur',
       'oneToOne',
       'admin::user'
     > &
@@ -1066,36 +1071,30 @@ export interface ApiFiturServiceFiturService extends Schema.CollectionType {
   };
 }
 
-export interface ApiGaleriportofolioGaleriportofolio
-  extends Schema.CollectionType {
-  collectionName: 'galeriportofolios';
+export interface ApiListLogoListLogo extends Schema.CollectionType {
+  collectionName: 'list_logos';
   info: {
-    singularName: 'galeriportofolio';
-    pluralName: 'galeriportofolios';
-    displayName: 'Our Work.Portofolio.Galeri Portofolio';
-    description: '';
+    singularName: 'list-logo';
+    pluralName: 'list-logos';
+    displayName: 'List Logo';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    gambar: Attribute.Media;
-    portfolio: Attribute.Relation<
-      'api::galeriportofolio.galeriportofolio',
-      'manyToOne',
-      'api::portfolio.portfolio'
-    >;
+    nama_perusahaan: Attribute.String;
+    logo_client: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::galeriportofolio.galeriportofolio',
+      'api::list-logo.list-logo',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::galeriportofolio.galeriportofolio',
+      'api::list-logo.list-logo',
       'oneToOne',
       'admin::user'
     > &
@@ -1103,178 +1102,38 @@ export interface ApiGaleriportofolioGaleriportofolio
   };
 }
 
-export interface ApiHasilPortoHasilPorto extends Schema.CollectionType {
-  collectionName: 'hasil_portos';
+export interface ApiListPortofolioListPortofolio extends Schema.CollectionType {
+  collectionName: 'list_portofolios';
   info: {
-    singularName: 'hasil-porto';
-    pluralName: 'hasil-portos';
-    displayName: 'Our Work.Portofolio.Hasil Portofolio';
+    singularName: 'list-portofolio';
+    pluralName: 'list-portofolios';
+    displayName: 'List Portofolio';
     description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    gambarhasil: Attribute.Media;
-    penjelasan: Attribute.String;
-    portfolio: Attribute.Relation<
-      'api::hasil-porto.hasil-porto',
-      'manyToOne',
-      'api::portfolio.portfolio'
-    >;
-    hasil: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::hasil-porto.hasil-porto',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::hasil-porto.hasil-porto',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiHeroHero extends Schema.SingleType {
-  collectionName: 'heroes';
-  info: {
-    singularName: 'hero';
-    pluralName: 'heroes';
-    displayName: 'Hero';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    perusahaan: Attribute.String;
-    kalimat: Attribute.String;
-    deskripsi: Attribute.Text;
-    gambar: Attribute.Media;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::hero.hero', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<'api::hero.hero', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-  };
-}
-
-export interface ApiLogoclientLogoclient extends Schema.SingleType {
-  collectionName: 'logoclients';
-  info: {
-    singularName: 'logoclient';
-    pluralName: 'logoclients';
-    displayName: 'Home.Logo Client';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    logoupload: Attribute.Media;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::logoclient.logoclient',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::logoclient.logoclient',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiOverviewOverview extends Schema.CollectionType {
-  collectionName: 'overviews';
-  info: {
-    singularName: 'overview';
-    pluralName: 'overviews';
-    displayName: 'overview';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    caption: Attribute.String;
-    descsingkat: Attribute.Text;
-    svgicon: Attribute.Media;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::overview.overview',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::overview.overview',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiPortfolioPortfolio extends Schema.CollectionType {
-  collectionName: 'portfolios';
-  info: {
-    singularName: 'portfolio';
-    pluralName: 'portfolios';
-    displayName: 'Our Work.Portofolio';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    gambarporto: Attribute.Media;
-    judulporto: Attribute.String;
+    gambar_utama: Attribute.Media;
+    galeri_portofolio: Attribute.Media;
     nama_aplikasi: Attribute.String;
     perusahaan: Attribute.String;
-    penjelasan: Attribute.Text;
-    solusi: Attribute.Text;
-    fitur_portos: Attribute.Relation<
-      'api::portfolio.portfolio',
-      'oneToMany',
-      'api::fitur-porto.fitur-porto'
+    deskripsi: Attribute.Blocks;
+    slug: Attribute.UID<
+      'api::list-portofolio.list-portofolio',
+      'nama_aplikasi'
     >;
-    galeriportofolios: Attribute.Relation<
-      'api::portfolio.portfolio',
-      'oneToMany',
-      'api::galeriportofolio.galeriportofolio'
-    >;
-    hasil_portos: Attribute.Relation<
-      'api::portfolio.portfolio',
-      'oneToMany',
-      'api::hasil-porto.hasil-porto'
-    >;
-    slug: Attribute.UID<'api::portfolio.portfolio', 'judulporto'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::portfolio.portfolio',
+      'api::list-portofolio.list-portofolio',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::portfolio.portfolio',
+      'api::list-portofolio.list-portofolio',
       'oneToOne',
       'admin::user'
     > &
@@ -1282,35 +1141,315 @@ export interface ApiPortfolioPortfolio extends Schema.CollectionType {
   };
 }
 
-export interface ApiSkillSkill extends Schema.CollectionType {
-  collectionName: 'skills';
+export interface ApiListPrincipalListPrincipal extends Schema.CollectionType {
+  collectionName: 'list_principals';
   info: {
-    singularName: 'skill';
-    pluralName: 'skills';
-    displayName: 'Our Solution/Developer Service.Skill';
+    singularName: 'list-principal';
+    pluralName: 'list-principals';
+    displayName: 'List Principal';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    icon: Attribute.Media;
+    judul: Attribute.String;
+    deskripsi: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::list-principal.list-principal',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::list-principal.list-principal',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiListProdukListProduk extends Schema.CollectionType {
+  collectionName: 'list_produks';
+  info: {
+    singularName: 'list-produk';
+    pluralName: 'list-produks';
+    displayName: 'List Produk';
     description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    bidangskill: Attribute.String;
-    detailskills: Attribute.Relation<
-      'api::skill.skill',
-      'oneToMany',
-      'api::detailskill.detailskill'
-    >;
+    nama_produk: Attribute.String;
+    deskripsi: Attribute.Text;
+    gambar_produk: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::skill.skill',
+      'api::list-produk.list-produk',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::skill.skill',
+      'api::list-produk.list-produk',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiListServiceListService extends Schema.CollectionType {
+  collectionName: 'list_services';
+  info: {
+    singularName: 'list-service';
+    pluralName: 'list-services';
+    displayName: 'List Service';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    deskripsi_service: Attribute.Text;
+    judul_service: Attribute.String;
+    icon_service: Attribute.Media;
+    list_service_details: Attribute.Relation<
+      'api::list-service.list-service',
+      'oneToMany',
+      'api::list-service-detail.list-service-detail'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::list-service.list-service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::list-service.list-service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiListServiceDetailListServiceDetail
+  extends Schema.CollectionType {
+  collectionName: 'list_service_details';
+  info: {
+    singularName: 'list-service-detail';
+    pluralName: 'list-service-details';
+    displayName: 'List Service Detail';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    nama_fiturservice: Attribute.String;
+    list_service: Attribute.Relation<
+      'api::list-service-detail.list-service-detail',
+      'manyToOne',
+      'api::list-service.list-service'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::list-service-detail.list-service-detail',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::list-service-detail.list-service-detail',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiListSkillListSkill extends Schema.CollectionType {
+  collectionName: 'list_skills';
+  info: {
+    singularName: 'list-skill';
+    pluralName: 'list-skills';
+    displayName: 'List Skill';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Skill: Attribute.String;
+    list_skill_details: Attribute.Relation<
+      'api::list-skill.list-skill',
+      'manyToMany',
+      'api::list-skill-detail.list-skill-detail'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::list-skill.list-skill',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::list-skill.list-skill',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiListSkillDetailListSkillDetail
+  extends Schema.CollectionType {
+  collectionName: 'list_skill_details';
+  info: {
+    singularName: 'list-skill-detail';
+    pluralName: 'list-skill-details';
+    displayName: 'List Skill Detail';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    icon_skill: Attribute.Media;
+    skill: Attribute.String;
+    list_skills: Attribute.Relation<
+      'api::list-skill-detail.list-skill-detail',
+      'manyToMany',
+      'api::list-skill.list-skill'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::list-skill-detail.list-skill-detail',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::list-skill-detail.list-skill-detail',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPortofolioPortofolio extends Schema.SingleType {
+  collectionName: 'portofolios';
+  info: {
+    singularName: 'portofolio';
+    pluralName: 'portofolios';
+    displayName: 'Portofolio';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    main_section: Attribute.Component<'portofolio-page.portofolio-main'>;
+    count_section: Attribute.Component<'portofolio-page.count-component'>;
+    list_portofolios: Attribute.Relation<
+      'api::portofolio.portofolio',
+      'oneToMany',
+      'api::list-portofolio.list-portofolio'
+    >;
+    portofolio_section: Attribute.Component<'portofolio-page.portofolio-section'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::portofolio.portofolio',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::portofolio.portofolio',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPrinsipProdukPrinsipProduk extends Schema.SingleType {
+  collectionName: 'prinsip_produks';
+  info: {
+    singularName: 'prinsip-produk';
+    pluralName: 'prinsip-produks';
+    displayName: 'Prinsip Produk';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    main_section: Attribute.Component<'principal-page.principal-main'>;
+    principal_section: Attribute.Component<'principal-page.principal-product'>;
+    commercials_section: Attribute.Component<'principal-page.commercials'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::prinsip-produk.prinsip-produk',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::prinsip-produk.prinsip-produk',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSkillDeveloperSkillDeveloper extends Schema.SingleType {
+  collectionName: 'skill_developers';
+  info: {
+    singularName: 'skill-developer';
+    pluralName: 'skill-developers';
+    displayName: 'Skill Developer';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    main_section: Attribute.Component<'developer-service.main-section'>;
+    developer_section: Attribute.Component<'developer-service.developer-section'>;
+    skill_section: Attribute.Component<'developer-service.developer-skill'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::skill-developer.skill-developer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::skill-developer.skill-developer',
       'oneToOne',
       'admin::user'
     > &
@@ -1337,20 +1476,24 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::slugify.slug': PluginSlugifySlug;
-      'api::bisnisbidang.bisnisbidang': ApiBisnisbidangBisnisbidang;
       'api::chatbot.chatbot': ApiChatbotChatbot;
-      'api::customdev.customdev': ApiCustomdevCustomdev;
-      'api::detailskill.detailskill': ApiDetailskillDetailskill;
-      'api::fitur.fitur': ApiFiturFitur;
-      'api::fitur-porto.fitur-porto': ApiFiturPortoFiturPorto;
-      'api::fitur-service.fitur-service': ApiFiturServiceFiturService;
-      'api::galeriportofolio.galeriportofolio': ApiGaleriportofolioGaleriportofolio;
-      'api::hasil-porto.hasil-porto': ApiHasilPortoHasilPorto;
-      'api::hero.hero': ApiHeroHero;
-      'api::logoclient.logoclient': ApiLogoclientLogoclient;
-      'api::overview.overview': ApiOverviewOverview;
-      'api::portfolio.portfolio': ApiPortfolioPortfolio;
-      'api::skill.skill': ApiSkillSkill;
+      'api::home.home': ApiHomeHome;
+      'api::layanan-kami.layanan-kami': ApiLayananKamiLayananKami;
+      'api::list-bidang.list-bidang': ApiListBidangListBidang;
+      'api::list-commercial.list-commercial': ApiListCommercialListCommercial;
+      'api::list-commercial-fitur.list-commercial-fitur': ApiListCommercialFiturListCommercialFitur;
+      'api::list-fitur.list-fitur': ApiListFiturListFitur;
+      'api::list-logo.list-logo': ApiListLogoListLogo;
+      'api::list-portofolio.list-portofolio': ApiListPortofolioListPortofolio;
+      'api::list-principal.list-principal': ApiListPrincipalListPrincipal;
+      'api::list-produk.list-produk': ApiListProdukListProduk;
+      'api::list-service.list-service': ApiListServiceListService;
+      'api::list-service-detail.list-service-detail': ApiListServiceDetailListServiceDetail;
+      'api::list-skill.list-skill': ApiListSkillListSkill;
+      'api::list-skill-detail.list-skill-detail': ApiListSkillDetailListSkillDetail;
+      'api::portofolio.portofolio': ApiPortofolioPortofolio;
+      'api::prinsip-produk.prinsip-produk': ApiPrinsipProdukPrinsipProduk;
+      'api::skill-developer.skill-developer': ApiSkillDeveloperSkillDeveloper;
     }
   }
 }

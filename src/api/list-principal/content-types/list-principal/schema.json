@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "list_principals",
+  "info": {
+    "singularName": "list-principal",
+    "pluralName": "list-principals",
+    "displayName": "List Principal"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "icon": {
+      "allowedTypes": ["images"],
+      "type": "media",
+      "multiple": false
+    },
+    "judul": {
+      "type": "string"
+    },
+    "deskripsi": {
+      "type": "string"
+    }
+  }
+}

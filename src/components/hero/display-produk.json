@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_hero_display_produks",
+  "info": {
+    "displayName": "Display Produk"
+  },
+  "options": {},
+  "attributes": {
+    "judul": {
+      "type": "string"
+    },
+    "subjudul": {
+      "type": "string"
+    }
+  }
+}

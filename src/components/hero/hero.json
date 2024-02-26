@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_hero_heroes",
+  "info": {
+    "displayName": "Hero"
+  },
+  "options": {},
+  "attributes": {
+    "nama_pt": {
+      "type": "string"
+    },
+    "kalimat_utama": {
+      "type": "string"
+    },
+    "kalimat_kedua": {
+      "type": "text"
+    },
+    "gambar_hero": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

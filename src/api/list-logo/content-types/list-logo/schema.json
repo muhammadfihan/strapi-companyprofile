@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "list_logos",
+  "info": {
+    "singularName": "list-logo",
+    "pluralName": "list-logos",
+    "displayName": "List Logo"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nama_perusahaan": {
+      "type": "string"
+    },
+    "logo_client": {
+      "allowedTypes": ["images"],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
