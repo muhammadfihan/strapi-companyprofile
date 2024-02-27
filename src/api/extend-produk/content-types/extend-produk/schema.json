@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "extend_produks",
+  "info": {
+    "singularName": "extend-produk",
+    "pluralName": "extend-produks",
+    "displayName": "Extend Produk",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nama_produk": {
+      "type": "string"
+    },
+    "deskripsi_singkat": {
+      "type": "string"
+    },
+    "app_icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "link_produk": {
+      "type": "string"
+    },
+    "aktif": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_footer_main_footers",
+  "info": {
+    "displayName": "Main Footer",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "deskripsi": {
+      "type": "text"
+    },
+    "footer_contacts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::footer-contact.footer-contact"
+    },
+    "footer_karirs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::footer-karir.footer-karir"
+    },
+    "footer_alamats": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::footer-alamat.footer-alamat"
+    }
+  }
+}

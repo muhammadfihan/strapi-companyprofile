@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "footer_contacts",
+  "info": {
+    "singularName": "footer-contact",
+    "pluralName": "footer-contacts",
+    "displayName": "Footer Contact"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "lokasi": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    }
+  }
+}

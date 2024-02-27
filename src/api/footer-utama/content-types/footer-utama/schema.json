@@ -1,0 +1,37 @@
+{
+  "kind": "singleType",
+  "collectionName": "footer_utamas",
+  "info": {
+    "singularName": "footer-utama",
+    "pluralName": "footer-utamas",
+    "displayName": "Footer Utama",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "main_footer": {
+      "type": "component",
+      "repeatable": false,
+      "component": "footer.main-footer"
+    },
+    "subjudul": {
+      "type": "string"
+    },
+    "judul_utama": {
+      "type": "string"
+    },
+    "deskripsi": {
+      "type": "text"
+    },
+    "gambar_footer": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

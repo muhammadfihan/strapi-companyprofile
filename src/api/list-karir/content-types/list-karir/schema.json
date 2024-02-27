@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "list_karirs",
+  "info": {
+    "singularName": "list-karir",
+    "pluralName": "list-karirs",
+    "displayName": "List Karir"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "icon": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "posisi": {
+      "type": "string"
+    }
+  }
+}

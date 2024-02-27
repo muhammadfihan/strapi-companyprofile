@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "footer_alamats",
+  "info": {
+    "singularName": "footer-alamat",
+    "pluralName": "footer-alamats",
+    "displayName": "Footer Alamat"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "lokasi": {
+      "type": "string"
+    },
+    "detail": {
+      "type": "text"
+    }
+  }
+}

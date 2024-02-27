@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_carier_page_main_sections",
+  "info": {
+    "displayName": "Main Section"
+  },
+  "options": {},
+  "attributes": {
+    "judul_path": {
+      "type": "string"
+    },
+    "judul_utama": {
+      "type": "string"
+    },
+    "deskripsi": {
+      "type": "text"
+    }
+  }
+}

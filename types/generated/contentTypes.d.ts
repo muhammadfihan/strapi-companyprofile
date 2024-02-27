@@ -853,6 +853,200 @@ export interface ApiChatbotChatbot extends Schema.CollectionType {
   };
 }
 
+export interface ApiExtendProdukExtendProduk extends Schema.CollectionType {
+  collectionName: 'extend_produks';
+  info: {
+    singularName: 'extend-produk';
+    pluralName: 'extend-produks';
+    displayName: 'Extend Produk';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    nama_produk: Attribute.String;
+    deskripsi_singkat: Attribute.String;
+    app_icon: Attribute.Media;
+    link_produk: Attribute.String;
+    aktif: Attribute.Boolean & Attribute.DefaultTo<true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::extend-produk.extend-produk',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::extend-produk.extend-produk',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFooterAlamatFooterAlamat extends Schema.CollectionType {
+  collectionName: 'footer_alamats';
+  info: {
+    singularName: 'footer-alamat';
+    pluralName: 'footer-alamats';
+    displayName: 'Footer Alamat';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    lokasi: Attribute.String;
+    detail: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::footer-alamat.footer-alamat',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::footer-alamat.footer-alamat',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFooterContactFooterContact extends Schema.CollectionType {
+  collectionName: 'footer_contacts';
+  info: {
+    singularName: 'footer-contact';
+    pluralName: 'footer-contacts';
+    displayName: 'Footer Contact';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    lokasi: Attribute.String;
+    email: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::footer-contact.footer-contact',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::footer-contact.footer-contact',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFooterKarirFooterKarir extends Schema.CollectionType {
+  collectionName: 'footer_karirs';
+  info: {
+    singularName: 'footer-karir';
+    pluralName: 'footer-karirs';
+    displayName: 'Footer Karir';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    email: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::footer-karir.footer-karir',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::footer-karir.footer-karir',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFooterKeduaFooterKedua extends Schema.SingleType {
+  collectionName: 'footer_keduas';
+  info: {
+    singularName: 'footer-kedua';
+    pluralName: 'footer-keduas';
+    displayName: 'Footer Kedua';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    judul: Attribute.String;
+    subjudul: Attribute.String;
+    gambar_footer: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::footer-kedua.footer-kedua',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::footer-kedua.footer-kedua',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFooterUtamaFooterUtama extends Schema.SingleType {
+  collectionName: 'footer_utamas';
+  info: {
+    singularName: 'footer-utama';
+    pluralName: 'footer-utamas';
+    displayName: 'Footer Utama';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    main_footer: Attribute.Component<'footer.main-footer'>;
+    subjudul: Attribute.String;
+    judul_utama: Attribute.String;
+    deskripsi: Attribute.Text;
+    gambar_footer: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::footer-utama.footer-utama',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::footer-utama.footer-utama',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiHomeHome extends Schema.SingleType {
   collectionName: 'homes';
   info: {
@@ -890,6 +1084,80 @@ export interface ApiHomeHome extends Schema.SingleType {
     createdBy: Attribute.Relation<'api::home.home', 'oneToOne', 'admin::user'> &
       Attribute.Private;
     updatedBy: Attribute.Relation<'api::home.home', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiHubungiKamiHubungiKami extends Schema.SingleType {
+  collectionName: 'hubungi_kamis';
+  info: {
+    singularName: 'hubungi-kami';
+    pluralName: 'hubungi-kamis';
+    displayName: 'Hubungi Kami';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    judul_path: Attribute.String;
+    judul_utama: Attribute.String;
+    deskripsi: Attribute.Text;
+    list_contacts: Attribute.Relation<
+      'api::hubungi-kami.hubungi-kami',
+      'oneToMany',
+      'api::list-contact.list-contact'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::hubungi-kami.hubungi-kami',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::hubungi-kami.hubungi-kami',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiKarirKarir extends Schema.SingleType {
+  collectionName: 'karirs';
+  info: {
+    singularName: 'karir';
+    pluralName: 'karirs';
+    displayName: 'Karir';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    main_section: Attribute.Component<'carier-page.main-section'>;
+    carier_section: Attribute.Component<'carier-page.carier-section'>;
+    list_karirs: Attribute.Relation<
+      'api::karir.karir',
+      'oneToMany',
+      'api::list-karir.list-karir'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::karir.karir',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::karir.karir',
+      'oneToOne',
+      'admin::user'
+    > &
       Attribute.Private;
   };
 }
@@ -1041,6 +1309,43 @@ export interface ApiListCommercialFiturListCommercialFitur
   };
 }
 
+export interface ApiListContactListContact extends Schema.CollectionType {
+  collectionName: 'list_contacts';
+  info: {
+    singularName: 'list-contact';
+    pluralName: 'list-contacts';
+    displayName: 'List Contact';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    profile_picture: Attribute.Media;
+    nama: Attribute.String;
+    email: Attribute.String;
+    link_facebook: Attribute.String;
+    link_instagram: Attribute.String;
+    link_twitter: Attribute.String;
+    link_whatsapp: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::list-contact.list-contact',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::list-contact.list-contact',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiListFiturListFitur extends Schema.CollectionType {
   collectionName: 'list_fiturs';
   info: {
@@ -1064,6 +1369,37 @@ export interface ApiListFiturListFitur extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::list-fitur.list-fitur',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiListKarirListKarir extends Schema.CollectionType {
+  collectionName: 'list_karirs';
+  info: {
+    singularName: 'list-karir';
+    pluralName: 'list-karirs';
+    displayName: 'List Karir';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    icon: Attribute.Media;
+    posisi: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::list-karir.list-karir',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::list-karir.list-karir',
       'oneToOne',
       'admin::user'
     > &
@@ -1353,6 +1689,40 @@ export interface ApiListSkillDetailListSkillDetail
   };
 }
 
+export interface ApiPesanCustomerPesanCustomer extends Schema.CollectionType {
+  collectionName: 'pesan_customers';
+  info: {
+    singularName: 'pesan-customer';
+    pluralName: 'pesan-customers';
+    displayName: 'Pesan Customer';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    nama: Attribute.String;
+    email: Attribute.String;
+    nohp: Attribute.String;
+    perusahaan: Attribute.String;
+    pesan: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::pesan-customer.pesan-customer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::pesan-customer.pesan-customer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPortofolioPortofolio extends Schema.SingleType {
   collectionName: 'portofolios';
   info: {
@@ -1477,12 +1847,22 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::slugify.slug': PluginSlugifySlug;
       'api::chatbot.chatbot': ApiChatbotChatbot;
+      'api::extend-produk.extend-produk': ApiExtendProdukExtendProduk;
+      'api::footer-alamat.footer-alamat': ApiFooterAlamatFooterAlamat;
+      'api::footer-contact.footer-contact': ApiFooterContactFooterContact;
+      'api::footer-karir.footer-karir': ApiFooterKarirFooterKarir;
+      'api::footer-kedua.footer-kedua': ApiFooterKeduaFooterKedua;
+      'api::footer-utama.footer-utama': ApiFooterUtamaFooterUtama;
       'api::home.home': ApiHomeHome;
+      'api::hubungi-kami.hubungi-kami': ApiHubungiKamiHubungiKami;
+      'api::karir.karir': ApiKarirKarir;
       'api::layanan-kami.layanan-kami': ApiLayananKamiLayananKami;
       'api::list-bidang.list-bidang': ApiListBidangListBidang;
       'api::list-commercial.list-commercial': ApiListCommercialListCommercial;
       'api::list-commercial-fitur.list-commercial-fitur': ApiListCommercialFiturListCommercialFitur;
+      'api::list-contact.list-contact': ApiListContactListContact;
       'api::list-fitur.list-fitur': ApiListFiturListFitur;
+      'api::list-karir.list-karir': ApiListKarirListKarir;
       'api::list-logo.list-logo': ApiListLogoListLogo;
       'api::list-portofolio.list-portofolio': ApiListPortofolioListPortofolio;
       'api::list-principal.list-principal': ApiListPrincipalListPrincipal;
@@ -1491,6 +1871,7 @@ declare module '@strapi/types' {
       'api::list-service-detail.list-service-detail': ApiListServiceDetailListServiceDetail;
       'api::list-skill.list-skill': ApiListSkillListSkill;
       'api::list-skill-detail.list-skill-detail': ApiListSkillDetailListSkillDetail;
+      'api::pesan-customer.pesan-customer': ApiPesanCustomerPesanCustomer;
       'api::portofolio.portofolio': ApiPortofolioPortofolio;
       'api::prinsip-produk.prinsip-produk': ApiPrinsipProdukPrinsipProduk;
       'api::skill-developer.skill-developer': ApiSkillDeveloperSkillDeveloper;

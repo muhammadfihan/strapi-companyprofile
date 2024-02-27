@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pesan_customers",
+  "info": {
+    "singularName": "pesan-customer",
+    "pluralName": "pesan-customers",
+    "displayName": "Pesan Customer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nama": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "nohp": {
+      "type": "string"
+    },
+    "perusahaan": {
+      "type": "string"
+    },
+    "pesan": {
+      "type": "text"
+    }
+  }
+}

@@ -1,5 +1,28 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface CarierPageCarierSection extends Schema.Component {
+  collectionName: 'components_carier_page_carier_sections';
+  info: {
+    displayName: 'Carier Section';
+  };
+  attributes: {
+    subjudul: Attribute.String;
+    judul_utama: Attribute.String;
+  };
+}
+
+export interface CarierPageMainSection extends Schema.Component {
+  collectionName: 'components_carier_page_main_sections';
+  info: {
+    displayName: 'Main Section';
+  };
+  attributes: {
+    judul_path: Attribute.String;
+    judul_utama: Attribute.String;
+    deskripsi: Attribute.Text;
+  };
+}
+
 export interface DeveloperServiceDeveloperSection extends Schema.Component {
   collectionName: 'components_developer_service_devsection';
   info: {
@@ -57,6 +80,33 @@ export interface DeveloperServiceMainSection extends Schema.Component {
   };
 }
 
+export interface FooterMainFooter extends Schema.Component {
+  collectionName: 'components_footer_main_footers';
+  info: {
+    displayName: 'Main Footer';
+    description: '';
+  };
+  attributes: {
+    logo: Attribute.Media;
+    deskripsi: Attribute.Text;
+    footer_contacts: Attribute.Relation<
+      'footer.main-footer',
+      'oneToMany',
+      'api::footer-contact.footer-contact'
+    >;
+    footer_karirs: Attribute.Relation<
+      'footer.main-footer',
+      'oneToMany',
+      'api::footer-karir.footer-karir'
+    >;
+    footer_alamats: Attribute.Relation<
+      'footer.main-footer',
+      'oneToMany',
+      'api::footer-alamat.footer-alamat'
+    >;
+  };
+}
+
 export interface HeroBidangBisnis extends Schema.Component {
   collectionName: 'components_hero_bidang_bisnis';
   info: {
@@ -100,7 +150,7 @@ export interface HeroKeunggulanProduk extends Schema.Component {
   };
   attributes: {
     judul: Attribute.String;
-    deskiripsi: Attribute.Text;
+    deskripsi: Attribute.Text;
     mockup_produk: Attribute.Media;
     list_fiturs: Attribute.Relation<
       'hero.keunggulan-produk',
@@ -262,9 +312,12 @@ export interface SolutionPageSolutionPage extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'carier-page.carier-section': CarierPageCarierSection;
+      'carier-page.main-section': CarierPageMainSection;
       'developer-service.developer-section': DeveloperServiceDeveloperSection;
       'developer-service.developer-skill': DeveloperServiceDeveloperSkill;
       'developer-service.main-section': DeveloperServiceMainSection;
+      'footer.main-footer': FooterMainFooter;
       'hero.bidang-bisnis': HeroBidangBisnis;
       'hero.display-produk': HeroDisplayProduk;
       'hero.hero': HeroHero;

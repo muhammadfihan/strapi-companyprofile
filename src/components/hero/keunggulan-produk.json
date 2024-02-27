@@ -9,7 +9,7 @@
     "judul": {
       "type": "string"
     },
-    "deskiripsi": {
+    "deskripsi": {
       "type": "text"
     },
     "mockup_produk": {

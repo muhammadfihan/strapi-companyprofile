@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "list_contacts",
+  "info": {
+    "singularName": "list-contact",
+    "pluralName": "list-contacts",
+    "displayName": "List Contact",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "profile_picture": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "nama": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "link_facebook": {
+      "type": "string"
+    },
+    "link_instagram": {
+      "type": "string"
+    },
+    "link_twitter": {
+      "type": "string"
+    },
+    "link_whatsapp": {
+      "type": "string"
+    }
+  }
+}

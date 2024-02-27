@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "footer_karirs",
+  "info": {
+    "singularName": "footer-karir",
+    "pluralName": "footer-karirs",
+    "displayName": "Footer Karir"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "email": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_carier_page_carier_sections",
+  "info": {
+    "displayName": "Carier Section"
+  },
+  "options": {},
+  "attributes": {
+    "subjudul": {
+      "type": "string"
+    },
+    "judul_utama": {
+      "type": "string"
+    }
+  }
+}

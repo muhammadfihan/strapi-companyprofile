@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "footer_keduas",
+  "info": {
+    "singularName": "footer-kedua",
+    "pluralName": "footer-keduas",
+    "displayName": "Footer Kedua"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "judul": {
+      "type": "string"
+    },
+    "subjudul": {
+      "type": "string"
+    },
+    "gambar_footer": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
