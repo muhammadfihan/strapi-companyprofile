@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_chatbot_no_answers",
+  "info": {
+    "displayName": "No Answer"
+  },
+  "options": {},
+  "attributes": {
+    "isi_noanswer": {
+      "type": "text"
+    },
+    "kontak": {
+      "type": "string"
+    },
+    "link_kontak": {
+      "type": "string"
+    }
+  }
+}

@@ -18,20 +18,8 @@
     "deskripsi_singkat": {
       "type": "string"
     },
-    "app_icon": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
-    },
     "link_produk": {
       "type": "string"
-    },
-    "aktif": {
-      "type": "boolean",
-      "default": true
     }
   }
 }

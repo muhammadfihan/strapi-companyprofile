@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "custom_chatbots",
+  "info": {
+    "singularName": "custom-chatbot",
+    "pluralName": "custom-chatbots",
+    "displayName": "Custom Chatbot"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "main_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "chatbot.default-chatbot"
+    },
+    "jawaban_bot": {
+      "type": "component",
+      "repeatable": false,
+      "component": "chatbot.bot-answer"
+    },
+    "jawaban_salah": {
+      "type": "component",
+      "repeatable": false,
+      "component": "chatbot.no-answer"
+    }
+  }
+}

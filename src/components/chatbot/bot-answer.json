@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_chatbot_bot_answers",
+  "info": {
+    "displayName": "Bot Answer"
+  },
+  "options": {},
+  "attributes": {
+    "isi_text": {
+      "type": "text"
+    }
+  }
+}

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "pesan-customer",
     "pluralName": "pesan-customers",
-    "displayName": "Pesan Customer"
+    "displayName": "Pesan Customer",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,19 +13,23 @@
   "pluginOptions": {},
   "attributes": {
     "nama": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "email": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "nohp": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "perusahaan": {
       "type": "string"
     },
     "pesan": {
-      "type": "text"
+      "type": "text",
+      "required": true
     }
   }
 }

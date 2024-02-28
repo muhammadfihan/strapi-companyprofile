@@ -23,6 +23,43 @@ export interface CarierPageMainSection extends Schema.Component {
   };
 }
 
+export interface ChatbotBotAnswer extends Schema.Component {
+  collectionName: 'components_chatbot_bot_answers';
+  info: {
+    displayName: 'Bot Answer';
+  };
+  attributes: {
+    isi_text: Attribute.Text;
+  };
+}
+
+export interface ChatbotDefaultChatbot extends Schema.Component {
+  collectionName: 'components_chatbot_default_chatbots';
+  info: {
+    displayName: 'Default Chatbot';
+    description: '';
+  };
+  attributes: {
+    avatar: Attribute.Media;
+    username: Attribute.String;
+    nama_bot: Attribute.String;
+    header_text: Attribute.String;
+    link_whatsapp: Attribute.String;
+  };
+}
+
+export interface ChatbotNoAnswer extends Schema.Component {
+  collectionName: 'components_chatbot_no_answers';
+  info: {
+    displayName: 'No Answer';
+  };
+  attributes: {
+    isi_noanswer: Attribute.Text;
+    kontak: Attribute.String;
+    link_kontak: Attribute.String;
+  };
+}
+
 export interface DeveloperServiceDeveloperSection extends Schema.Component {
   collectionName: 'components_developer_service_devsection';
   info: {
@@ -314,6 +351,9 @@ declare module '@strapi/types' {
     export interface Components {
       'carier-page.carier-section': CarierPageCarierSection;
       'carier-page.main-section': CarierPageMainSection;
+      'chatbot.bot-answer': ChatbotBotAnswer;
+      'chatbot.default-chatbot': ChatbotDefaultChatbot;
+      'chatbot.no-answer': ChatbotNoAnswer;
       'developer-service.developer-section': DeveloperServiceDeveloperSection;
       'developer-service.developer-skill': DeveloperServiceDeveloperSkill;
       'developer-service.main-section': DeveloperServiceMainSection;

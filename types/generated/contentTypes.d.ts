@@ -853,6 +853,38 @@ export interface ApiChatbotChatbot extends Schema.CollectionType {
   };
 }
 
+export interface ApiCustomChatbotCustomChatbot extends Schema.SingleType {
+  collectionName: 'custom_chatbots';
+  info: {
+    singularName: 'custom-chatbot';
+    pluralName: 'custom-chatbots';
+    displayName: 'Custom Chatbot';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    main_section: Attribute.Component<'chatbot.default-chatbot'>;
+    jawaban_bot: Attribute.Component<'chatbot.bot-answer'>;
+    jawaban_salah: Attribute.Component<'chatbot.no-answer'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::custom-chatbot.custom-chatbot',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::custom-chatbot.custom-chatbot',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiExtendProdukExtendProduk extends Schema.CollectionType {
   collectionName: 'extend_produks';
   info: {
@@ -867,9 +899,7 @@ export interface ApiExtendProdukExtendProduk extends Schema.CollectionType {
   attributes: {
     nama_produk: Attribute.String;
     deskripsi_singkat: Attribute.String;
-    app_icon: Attribute.Media;
     link_produk: Attribute.String;
-    aktif: Attribute.Boolean & Attribute.DefaultTo<true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1689,22 +1719,59 @@ export interface ApiListSkillDetailListSkillDetail
   };
 }
 
+export interface ApiNavProdukNavProduk extends Schema.SingleType {
+  collectionName: 'nav_produks';
+  info: {
+    singularName: 'nav-produk';
+    pluralName: 'nav-produks';
+    displayName: 'Nav Produk';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    nama_text: Attribute.String;
+    link_semuaproduk: Attribute.String;
+    extend_produks: Attribute.Relation<
+      'api::nav-produk.nav-produk',
+      'oneToMany',
+      'api::extend-produk.extend-produk'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::nav-produk.nav-produk',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::nav-produk.nav-produk',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPesanCustomerPesanCustomer extends Schema.CollectionType {
   collectionName: 'pesan_customers';
   info: {
     singularName: 'pesan-customer';
     pluralName: 'pesan-customers';
     displayName: 'Pesan Customer';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    nama: Attribute.String;
-    email: Attribute.String;
-    nohp: Attribute.String;
+    nama: Attribute.String & Attribute.Required;
+    email: Attribute.String & Attribute.Required;
+    nohp: Attribute.String & Attribute.Required;
     perusahaan: Attribute.String;
-    pesan: Attribute.Text;
+    pesan: Attribute.Text & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1847,6 +1914,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::slugify.slug': PluginSlugifySlug;
       'api::chatbot.chatbot': ApiChatbotChatbot;
+      'api::custom-chatbot.custom-chatbot': ApiCustomChatbotCustomChatbot;
       'api::extend-produk.extend-produk': ApiExtendProdukExtendProduk;
       'api::footer-alamat.footer-alamat': ApiFooterAlamatFooterAlamat;
       'api::footer-contact.footer-contact': ApiFooterContactFooterContact;
@@ -1871,6 +1939,7 @@ declare module '@strapi/types' {
       'api::list-service-detail.list-service-detail': ApiListServiceDetailListServiceDetail;
       'api::list-skill.list-skill': ApiListSkillListSkill;
       'api::list-skill-detail.list-skill-detail': ApiListSkillDetailListSkillDetail;
+      'api::nav-produk.nav-produk': ApiNavProdukNavProduk;
       'api::pesan-customer.pesan-customer': ApiPesanCustomerPesanCustomer;
       'api::portofolio.portofolio': ApiPortofolioPortofolio;
       'api::prinsip-produk.prinsip-produk': ApiPrinsipProdukPrinsipProduk;

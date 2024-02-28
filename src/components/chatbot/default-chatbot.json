@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_chatbot_default_chatbots",
+  "info": {
+    "displayName": "Default Chatbot",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "avatar": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "username": {
+      "type": "string"
+    },
+    "nama_bot": {
+      "type": "string"
+    },
+    "header_text": {
+      "type": "string"
+    },
+    "link_whatsapp": {
+      "type": "string"
+    }
+  }
+}
