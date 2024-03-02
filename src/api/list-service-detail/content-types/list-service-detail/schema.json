@@ -4,7 +4,8 @@
   "info": {
     "singularName": "list-service-detail",
     "pluralName": "list-service-details",
-    "displayName": "List Service Detail"
+    "displayName": "List Service Detail",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -14,9 +15,9 @@
     "nama_fiturservice": {
       "type": "string"
     },
-    "list_service": {
+    "list_services": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "manyToMany",
       "target": "api::list-service.list-service",
       "inversedBy": "list_service_details"
     }

@@ -1589,7 +1589,7 @@ export interface ApiListServiceListService extends Schema.CollectionType {
     icon_service: Attribute.Media;
     list_service_details: Attribute.Relation<
       'api::list-service.list-service',
-      'oneToMany',
+      'manyToMany',
       'api::list-service-detail.list-service-detail'
     >;
     createdAt: Attribute.DateTime;
@@ -1617,15 +1617,16 @@ export interface ApiListServiceDetailListServiceDetail
     singularName: 'list-service-detail';
     pluralName: 'list-service-details';
     displayName: 'List Service Detail';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     nama_fiturservice: Attribute.String;
-    list_service: Attribute.Relation<
+    list_services: Attribute.Relation<
       'api::list-service-detail.list-service-detail',
-      'manyToOne',
+      'manyToMany',
       'api::list-service.list-service'
     >;
     createdAt: Attribute.DateTime;
