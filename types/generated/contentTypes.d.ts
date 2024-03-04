@@ -1093,11 +1093,6 @@ export interface ApiHomeHome extends Schema.SingleType {
     produk_section: Attribute.Component<'hero.display-produk'>;
     keunggulan_section: Attribute.Component<'hero.keunggulan-produk'>;
     bisnis_section: Attribute.Component<'hero.bidang-bisnis'>;
-    list_produks: Attribute.Relation<
-      'api::home.home',
-      'oneToMany',
-      'api::list-produk.list-produk'
-    >;
     list_logos: Attribute.Relation<
       'api::home.home',
       'oneToMany',
@@ -1107,6 +1102,11 @@ export interface ApiHomeHome extends Schema.SingleType {
       'api::home.home',
       'oneToMany',
       'api::list-bidang.list-bidang'
+    >;
+    list_solusis: Attribute.Relation<
+      'api::home.home',
+      'oneToMany',
+      'api::list-solusi.list-solusi'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -1554,6 +1554,7 @@ export interface ApiListProdukListProduk extends Schema.CollectionType {
     nama_produk: Attribute.String;
     deskripsi: Attribute.Text;
     gambar_produk: Attribute.Media;
+    url: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1720,35 +1721,61 @@ export interface ApiListSkillDetailListSkillDetail
   };
 }
 
-export interface ApiNavProdukNavProduk extends Schema.SingleType {
-  collectionName: 'nav_produks';
+export interface ApiListSolusiListSolusi extends Schema.CollectionType {
+  collectionName: 'list_solusis';
   info: {
-    singularName: 'nav-produk';
-    pluralName: 'nav-produks';
-    displayName: 'Nav Produk';
+    singularName: 'list-solusi';
+    pluralName: 'list-solusis';
+    displayName: 'List Solusi';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    nama_text: Attribute.String;
-    link_semuaproduk: Attribute.String;
-    extend_produks: Attribute.Relation<
-      'api::nav-produk.nav-produk',
-      'oneToMany',
-      'api::extend-produk.extend-produk'
-    >;
+    gambar: Attribute.Media;
+    judul: Attribute.String;
+    deskripsi: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::nav-produk.nav-produk',
+      'api::list-solusi.list-solusi',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::nav-produk.nav-produk',
+      'api::list-solusi.list-solusi',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiLogoNavbarLogoNavbar extends Schema.SingleType {
+  collectionName: 'logo_navbars';
+  info: {
+    singularName: 'logo-navbar';
+    pluralName: 'logo-navbars';
+    displayName: 'Logo Navbar';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    logo: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::logo-navbar.logo-navbar',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::logo-navbar.logo-navbar',
       'oneToOne',
       'admin::user'
     > &
@@ -1862,6 +1889,41 @@ export interface ApiPrinsipProdukPrinsipProduk extends Schema.SingleType {
   };
 }
 
+export interface ApiProdukProduk extends Schema.SingleType {
+  collectionName: 'produks';
+  info: {
+    singularName: 'produk';
+    pluralName: 'produks';
+    displayName: 'Produk';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    judul_path: Attribute.String;
+    list_produks: Attribute.Relation<
+      'api::produk.produk',
+      'oneToMany',
+      'api::list-produk.list-produk'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::produk.produk',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::produk.produk',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiSkillDeveloperSkillDeveloper extends Schema.SingleType {
   collectionName: 'skill_developers';
   info: {
@@ -1940,10 +2002,12 @@ declare module '@strapi/types' {
       'api::list-service-detail.list-service-detail': ApiListServiceDetailListServiceDetail;
       'api::list-skill.list-skill': ApiListSkillListSkill;
       'api::list-skill-detail.list-skill-detail': ApiListSkillDetailListSkillDetail;
-      'api::nav-produk.nav-produk': ApiNavProdukNavProduk;
+      'api::list-solusi.list-solusi': ApiListSolusiListSolusi;
+      'api::logo-navbar.logo-navbar': ApiLogoNavbarLogoNavbar;
       'api::pesan-customer.pesan-customer': ApiPesanCustomerPesanCustomer;
       'api::portofolio.portofolio': ApiPortofolioPortofolio;
       'api::prinsip-produk.prinsip-produk': ApiPrinsipProdukPrinsipProduk;
+      'api::produk.produk': ApiProdukProduk;
       'api::skill-developer.skill-developer': ApiSkillDeveloperSkillDeveloper;
     }
   }

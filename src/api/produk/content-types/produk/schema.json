@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "produks",
+  "info": {
+    "singularName": "produk",
+    "pluralName": "produks",
+    "displayName": "Produk"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "judul_path": {
+      "type": "string"
+    },
+    "list_produks": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::list-produk.list-produk"
+    }
+  }
+}

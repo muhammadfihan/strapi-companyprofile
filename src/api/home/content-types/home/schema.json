@@ -32,11 +32,6 @@
       "repeatable": false,
       "component": "hero.bidang-bisnis"
     },
-    "list_produks": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::list-produk.list-produk"
-    },
     "list_logos": {
       "type": "relation",
       "relation": "oneToMany",
@@ -46,6 +41,11 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::list-bidang.list-bidang"
+    },
+    "list_solusis": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::list-solusi.list-solusi"
     }
   }
 }

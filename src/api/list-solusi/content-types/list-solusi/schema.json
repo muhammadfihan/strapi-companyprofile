@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "list_solusis",
+  "info": {
+    "singularName": "list-solusi",
+    "pluralName": "list-solusis",
+    "displayName": "List Solusi"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "gambar": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "judul": {
+      "type": "string"
+    },
+    "deskripsi": {
+      "type": "text"
+    }
+  }
+}
