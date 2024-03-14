@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_navbar_menu_kontak_menus",
+  "info": {
+    "displayName": "KontakMenu"
+  },
+  "options": {},
+  "attributes": {
+    "menu": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "active": {
+      "type": "boolean"
+    }
+  }
+}

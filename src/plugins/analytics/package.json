@@ -12,12 +12,25 @@
     }
   ],
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.5.1",
+    "@fortawesome/free-solid-svg-icons": "^6.5.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@google-analytics/data": "^4.4.0",
     "@strapi/design-system": "^1.6.3",
     "@strapi/helper-plugin": "^4.6.0",
     "@strapi/icons": "^1.6.3",
-    "prop-types": "^15.7.2"
+    "bootstrap": "^5.3.3",
+    "chart.js": "^4.4.2",
+    "flatpickr": "^4.6.13",
+    "googleapis": "^133.0.0",
+    "prop-types": "^15.7.2",
+    "querystring-es3": "^0.2.1",
+    "react-calendar": "^4.8.0",
+    "react-chartjs-2": "^5.2.0",
+    "react-query": "^3.39.3"
   },
   "devDependencies": {
+    "@types/bootstrap": "^5.2.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^5.3.4",

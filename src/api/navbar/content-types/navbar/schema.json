@@ -1,0 +1,46 @@
+{
+  "kind": "singleType",
+  "collectionName": "navbars",
+  "info": {
+    "singularName": "navbar",
+    "pluralName": "navbars",
+    "displayName": "Navbar",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Beranda": {
+      "type": "component",
+      "repeatable": false,
+      "component": "navbar-menu.beranda-menu"
+    },
+    "Solusi": {
+      "type": "component",
+      "repeatable": false,
+      "component": "navbar-menu.solusi-menu"
+    },
+    "Portofolio": {
+      "type": "component",
+      "repeatable": false,
+      "component": "navbar-menu.portofolio"
+    },
+    "Karir": {
+      "type": "component",
+      "repeatable": false,
+      "component": "navbar-menu.karir-menu"
+    },
+    "Kontak": {
+      "type": "component",
+      "repeatable": false,
+      "component": "navbar-menu.kontak-menu"
+    },
+    "Produk": {
+      "type": "component",
+      "repeatable": false,
+      "component": "navbar-menu.produk-menu"
+    }
+  }
+}

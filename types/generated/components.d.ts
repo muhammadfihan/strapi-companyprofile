@@ -197,6 +197,95 @@ export interface HeroKeunggulanProduk extends Schema.Component {
   };
 }
 
+export interface NavbarMenuBerandaMenu extends Schema.Component {
+  collectionName: 'components_navbar_menu_beranda_menus';
+  info: {
+    displayName: 'BerandaMenu';
+    description: '';
+  };
+  attributes: {
+    menu: Attribute.String;
+    url: Attribute.String;
+    active: Attribute.Boolean;
+  };
+}
+
+export interface NavbarMenuKarirMenu extends Schema.Component {
+  collectionName: 'components_navbar_menu_karir_menus';
+  info: {
+    displayName: 'KarirMenu';
+  };
+  attributes: {
+    menu: Attribute.String;
+    url: Attribute.String;
+    active: Attribute.Boolean;
+  };
+}
+
+export interface NavbarMenuKontakMenu extends Schema.Component {
+  collectionName: 'components_navbar_menu_kontak_menus';
+  info: {
+    displayName: 'KontakMenu';
+  };
+  attributes: {
+    menu: Attribute.String;
+    url: Attribute.String;
+    active: Attribute.Boolean;
+  };
+}
+
+export interface NavbarMenuPortofolio extends Schema.Component {
+  collectionName: 'components_navbar_menu_portofolios';
+  info: {
+    displayName: 'Portofolio';
+  };
+  attributes: {
+    menu: Attribute.String;
+    url: Attribute.String;
+    active: Attribute.Boolean;
+  };
+}
+
+export interface NavbarMenuProdukMenu extends Schema.Component {
+  collectionName: 'components_navbar_menu_produk_menus';
+  info: {
+    displayName: 'ProdukMenu';
+  };
+  attributes: {
+    menu: Attribute.String;
+    url: Attribute.String;
+    active: Attribute.Boolean;
+  };
+}
+
+export interface NavbarMenuSolusiMenu extends Schema.Component {
+  collectionName: 'components_navbar_menu_solusi_menus';
+  info: {
+    displayName: 'SolusiMenu';
+    description: '';
+  };
+  attributes: {
+    menu: Attribute.String;
+    active: Attribute.Boolean;
+    custom_development: Attribute.Component<'navbar-menu.solusisubmenu'>;
+    principal_product: Attribute.Component<'navbar-menu.solusisubmenu'>;
+    dev_service: Attribute.Component<'navbar-menu.solusisubmenu'>;
+  };
+}
+
+export interface NavbarMenuSolusisubmenu extends Schema.Component {
+  collectionName: 'components_navbar_menu_solusisubmenus';
+  info: {
+    displayName: 'Solusisubmenu';
+  };
+  attributes: {
+    menu: Attribute.String;
+    deskripsi: Attribute.String;
+    url: Attribute.String;
+    active: Attribute.Boolean;
+  };
+}
+
 export interface PortofolioPageCountComponent extends Schema.Component {
   collectionName: 'components_portofolio_page_count_components';
   info: {
@@ -362,6 +451,13 @@ declare module '@strapi/types' {
       'hero.display-produk': HeroDisplayProduk;
       'hero.hero': HeroHero;
       'hero.keunggulan-produk': HeroKeunggulanProduk;
+      'navbar-menu.beranda-menu': NavbarMenuBerandaMenu;
+      'navbar-menu.karir-menu': NavbarMenuKarirMenu;
+      'navbar-menu.kontak-menu': NavbarMenuKontakMenu;
+      'navbar-menu.portofolio': NavbarMenuPortofolio;
+      'navbar-menu.produk-menu': NavbarMenuProdukMenu;
+      'navbar-menu.solusi-menu': NavbarMenuSolusiMenu;
+      'navbar-menu.solusisubmenu': NavbarMenuSolusisubmenu;
       'portofolio-page.count-component': PortofolioPageCountComponent;
       'portofolio-page.portofolio-main': PortofolioPagePortofolioMain;
       'portofolio-page.portofolio-section': PortofolioPagePortofolioSection;

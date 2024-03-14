@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_navbar_menu_solusisubmenus",
+  "info": {
+    "displayName": "Solusisubmenu"
+  },
+  "options": {},
+  "attributes": {
+    "menu": {
+      "type": "string"
+    },
+    "deskripsi": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "active": {
+      "type": "boolean"
+    }
+  }
+}

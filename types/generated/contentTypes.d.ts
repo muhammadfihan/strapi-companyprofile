@@ -1124,6 +1124,7 @@ export interface ApiHubungiKamiHubungiKami extends Schema.SingleType {
     singularName: 'hubungi-kami';
     pluralName: 'hubungi-kamis';
     displayName: 'Hubungi Kami';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1783,6 +1784,42 @@ export interface ApiLogoNavbarLogoNavbar extends Schema.SingleType {
   };
 }
 
+export interface ApiNavbarNavbar extends Schema.SingleType {
+  collectionName: 'navbars';
+  info: {
+    singularName: 'navbar';
+    pluralName: 'navbars';
+    displayName: 'Navbar';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Beranda: Attribute.Component<'navbar-menu.beranda-menu'>;
+    Solusi: Attribute.Component<'navbar-menu.solusi-menu'>;
+    Portofolio: Attribute.Component<'navbar-menu.portofolio'>;
+    Karir: Attribute.Component<'navbar-menu.karir-menu'>;
+    Kontak: Attribute.Component<'navbar-menu.kontak-menu'>;
+    Produk: Attribute.Component<'navbar-menu.produk-menu'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::navbar.navbar',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::navbar.navbar',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPesanCustomerPesanCustomer extends Schema.CollectionType {
   collectionName: 'pesan_customers';
   info: {
@@ -1895,6 +1932,7 @@ export interface ApiProdukProduk extends Schema.SingleType {
     singularName: 'produk';
     pluralName: 'produks';
     displayName: 'Produk';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -2004,6 +2042,7 @@ declare module '@strapi/types' {
       'api::list-skill-detail.list-skill-detail': ApiListSkillDetailListSkillDetail;
       'api::list-solusi.list-solusi': ApiListSolusiListSolusi;
       'api::logo-navbar.logo-navbar': ApiLogoNavbarLogoNavbar;
+      'api::navbar.navbar': ApiNavbarNavbar;
       'api::pesan-customer.pesan-customer': ApiPesanCustomerPesanCustomer;
       'api::portofolio.portofolio': ApiPortofolioPortofolio;
       'api::prinsip-produk.prinsip-produk': ApiPrinsipProdukPrinsipProduk;

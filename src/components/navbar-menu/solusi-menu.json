@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_navbar_menu_solusi_menus",
+  "info": {
+    "displayName": "SolusiMenu",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "menu": {
+      "type": "string"
+    },
+    "active": {
+      "type": "boolean"
+    },
+    "custom_development": {
+      "type": "component",
+      "repeatable": false,
+      "component": "navbar-menu.solusisubmenu"
+    },
+    "principal_product": {
+      "type": "component",
+      "repeatable": false,
+      "component": "navbar-menu.solusisubmenu"
+    },
+    "dev_service": {
+      "type": "component",
+      "repeatable": false,
+      "component": "navbar-menu.solusisubmenu"
+    }
+  }
+}

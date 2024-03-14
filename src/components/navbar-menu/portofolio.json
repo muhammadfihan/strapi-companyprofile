@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_navbar_menu_portofolios",
+  "info": {
+    "displayName": "Portofolio"
+  },
+  "options": {},
+  "attributes": {
+    "menu": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "active": {
+      "type": "boolean"
+    }
+  }
+}

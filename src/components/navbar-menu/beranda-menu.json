@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_navbar_menu_beranda_menus",
+  "info": {
+    "displayName": "BerandaMenu",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "menu": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "active": {
+      "type": "boolean"
+    }
+  }
+}

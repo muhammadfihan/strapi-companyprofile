@@ -4,6 +4,9 @@ import pluginPkg from "../../package.json";
 import pluginId from "./pluginId";
 import Initializer from "./components/Initializer";
 import PluginIcon from "./components/PluginIcon";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
+import "./app.css";
 
 const name = pluginPkg.strapi.name;
 
