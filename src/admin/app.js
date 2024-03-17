@@ -43,6 +43,17 @@ const config = {
         primary700: "#b72b1a",
       },
     },
+    dark: {
+      colors: {
+        primary100: "#fcecea",
+        primary200: "#f5c0b8",
+        primary500: "#ee5e52",
+        buttonPrimary500: "#ee5e52",
+        primary600: "#CB292C",
+        buttonPrimary600: "#CB292C",
+        primary700: "#b72b1a",
+      },
+    },
   },
   translations: {
     en: {

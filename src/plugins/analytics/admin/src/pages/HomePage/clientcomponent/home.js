@@ -203,7 +203,7 @@ const HomeComponent = () => {
             backgroundColor: gradient,
             // @ts-ignore
             borderColor: "rgb(255,99,132)",
-            data: hasilGabungan,
+            data: hasilGabungan ? hasilGabungan : [],
           },
         ],
       },
@@ -269,10 +269,10 @@ const HomeComponent = () => {
     const chart = new Chart(ctx, {
       type: "pie",
       data: {
-        labels: kotachart,
+        labels: kotachart ? kotachart : [],
         datasets: [
           {
-            data: pengchart,
+            data: pengchart ? pengchart : [],
             backgroundColor: ["#36A2EB", "#FF6384", "#4BC0C0"],
             borderWidth: 5,
           },
@@ -341,19 +341,21 @@ const HomeComponent = () => {
                             </div>
                           </div>
                           {loading ? (
-                            <></>
+                            <div>
+                              <h1 className="mt-1 mb-3 fs-1">0</h1>
+                            </div>
                           ) : (
                             <div>
                               <h1 className="mt-1 mb-3 fs-1">
                                 {totalTotalUser}
                               </h1>
-                              <div className="mb-0">
-                                <span className="text-muted">
-                                  Total User Metrics
-                                </span>
-                              </div>
                             </div>
                           )}
+                          <div className="mb-0">
+                            <span className="text-muted">
+                              Total User Metrics
+                            </span>
+                          </div>
                         </div>
                       </div>
                       <div className="card">
@@ -372,17 +374,17 @@ const HomeComponent = () => {
                             </div>
                           </div>
                           {loading ? (
-                            <></>
+                            <div>
+                              <h1 className="mt-1 mb-3 fs-1">0</h1>
+                            </div>
                           ) : (
                             <div>
                               <h1 className="mt-1 mb-3 fs-1">{realtimeuser}</h1>
-                              <div className="mb-0">
-                                <span className="text-muted">
-                                  Dalam 30 Menit
-                                </span>
-                              </div>
                             </div>
                           )}
+                          <div className="mb-0">
+                            <span className="text-muted">Dalam 30 Menit</span>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -403,19 +405,23 @@ const HomeComponent = () => {
                             </div>
                           </div>
                           {loading ? (
-                            <></>
+                            <div>
+                              <h1 className="mt-1 mb-3 fs-1">
+                                <TimeConverter seconds={0} />
+                              </h1>
+                            </div>
                           ) : (
                             <div>
                               <h1 className="mt-1 mb-3 fs-1">
                                 <TimeConverter seconds={totalDurasi} />
                               </h1>
-                              <div className="mb-0">
-                                <span className="text-muted">
-                                  Session Time Metrics
-                                </span>
-                              </div>
                             </div>
                           )}
+                          <div className="mb-0">
+                            <span className="text-muted">
+                              Session Time Metrics
+                            </span>
+                          </div>
                         </div>
                       </div>
                       <div className="card">
@@ -434,19 +440,21 @@ const HomeComponent = () => {
                             </div>
                           </div>
                           {loading ? (
-                            <></>
+                            <div>
+                              <h1 className="mt-1 mb-3 fs-1">0 kali</h1>
+                            </div>
                           ) : (
                             <div>
                               <h1 className="mt-1 mb-3 fs-1">
                                 {totalScreenPage} kali
                               </h1>
-                              <div className="mb-0">
-                                <span className="text-muted">
-                                  Visitor Pages Metrics
-                                </span>
-                              </div>
                             </div>
                           )}
+                          <div className="mb-0">
+                            <span className="text-muted">
+                              Visitor Pages Metrics
+                            </span>
+                          </div>
                         </div>
                       </div>
                     </div>
